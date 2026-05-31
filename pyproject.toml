@@ -1,2 +1,27 @@
+[build-system]
+requires = ["setuptools>=82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbit"
+version = "0.1.0"
+description = "Persistent WebSocket transaction coordination for Twisted and Autobahn."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "autobahn>=25.10.2",
+    "twisted>=26.4.0",
+    "zope.interface>=8.5",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=9.0.3",
+    "pytest-twisted>=1.14.3",
+]
+
+[tool.setuptools.packages.find]
+include = ["orbit*"]
+
 [tool.pytest.ini_options]
-pythonpath = ["."]
+testpaths = ["tests"]
